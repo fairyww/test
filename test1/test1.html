@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的第一个html页面</title>
+    <script src='./node_modules/vue/dist/vue.min.js'></script>
+    <!--<script src = 'http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>-->
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world, I am Vue.js',
+        }
+    });
+</script>
+</body>
+</html>

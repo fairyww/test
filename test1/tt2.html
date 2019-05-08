@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id = "total_money", type = "text", placeholder="输入预算上限">
+    <input id = "price", type = "text", placeholder="输入每种商品的价格">
+    <button onclick = "caculate()">计算</button>
+    <input id = "result", type = "text", placeholder="结果">
+    <br><br>
+<script>
+    function caculate() {
+        var t_money = document.getElementById("total_money").value;
+        var p = document.getElementById("price").value;
+        var pp = p.split(' ').sort(function(x, y){
+            return x - y;
+        });
+        var temp = 0;
+        for(var i = 0; i < pp.length; i++){
+            temp += parseInt(pp[i]);
+            if(temp > t_money){
+                temp -= pp[i];
+                break;
+            }
+        }
+        document.getElementById("result").value = temp;
+    }
+</script>
+</body>
+</html>

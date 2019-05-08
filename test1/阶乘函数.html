@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Number.prototype.N=function(){
+        let re=1;
+        for(let i=1;i<=this;i++){
+            re*=i;
+        }
+        return re;
+    }
+    let num=5;
+    console.log(num.N());
+</script>
+</body>
+</html>

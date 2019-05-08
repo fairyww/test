@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="table" width="100%" border="1">
+    <thead>
+    <tr>
+        <td>序号</td>
+        <td>标题</td>
+        <td>内容</td>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script>
+    window.onload=function(){
+        var data=[{"uid":"1","utitle":"纪委书记下乡被村民愤怒拦下：必须得给我个说法","ucontent":"督促解决和查处力度，决不让不正之风干扰群众的发展，决不让腐败问题毁掉群众对党的信任。"},
+        {"uid":"2","utitle":"玉龙雪山发生山体岩石崩塌 官方通报：不属于旅游区范围","ucontent":"新京报快讯 据丽江市玉龙县委宣传部消息，2019年5月3日上午10点50分左右，"},
+        {"uid":"3","utitle":"10秒用完1G流量？抢先上手国内首批5G手机","ucontent":"5G这块“大饼”在我们面前已经悬了足够长的时间。今年4月，"},
+        {"uid":"4","utitle":"两女孩坐行驶中宝马车顶猜拳，交警：将追罚","ucontent":"五一假期期间，一段两女孩坐车顶嬉闹玩耍的视频在网络上火了。"},
+        {"uid":"5","utitle":"《何以为家》：所有的人都有资格当父母吗？","ucontent":"毫无疑问，近期最火爆的电影非《复仇者联盟 4》莫属，上映至今已超过一周，"}]
+        var myTable=document.getElementById("table");
+        // for(var i=0;i<data.length;i++){
+        //     var row=table.insertRow(table.rows.length);
+        //     var c1=row.insertCell(0);
+        //     c1.innerHTML=data[i].uid;
+        //     var c2=row.insertCell(1);
+        //     c2.innerHTML=data[i].utitle;
+        //     c2.onclick=function () {
+        //         alert(data[i].ucontent);
+        //     }
+        //     var c3=row.insertCell(2);
+        //     c3.innerHTML=data[i].ucontent;
+        // }
+
+        var oTbody = myTable.tBodies[0];
+        for (var index = 0; index < data.length; index++) {
+            var oTr = document.createElement('tr');
+            oTbody.appendChild(oTr);
+
+            var oTd = document.createElement('td');
+            oTd.innerHTML = data[index].uid;
+            oTr.appendChild(oTd);
+
+            // oTd = document.createElement('td');
+            // oTd.innerHTML = data[index].utitle;
+            // oTr.appendChild(oTd);
+            // oTd.onclick=function () {
+            //     alert(data[index].ucontent);
+            // }
+            oTd = document.createElement('td');
+            oTr.appendChild(oTd);
+            let oA = document.createElement('a');
+            oA.innerHTML = data[index].utitle;
+            oA.href = "javascript:;";
+            oTd.appendChild(oA);
+            let i=data[index].ucontent;
+            oA.onclick=function () {
+                alert(i);
+            }
+
+            oTd = document.createElement('td');
+            oTd.innerHTML = data[index].ucontent;
+            oTr.appendChild(oTd);
+
+
+            // oTd = document.createElement('td');
+            // oTr.appendChild(oTd);
+            //
+            // var oA = document.createElement('a');
+            // oA.innerHTML = "删除";
+            // oA.href = "javascript:;";
+            // oTd.appendChild(oA);
+            // oA.onclick = function () {
+            //     oTbody.removeChild(this.parentNode.parentNode);
+            // }
+        }
+    }
+</script>
+</body>
+</html>

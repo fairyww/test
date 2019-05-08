@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='./node_modules/vue/dist/vue.min.js'></script>
+</head>
+<body>
+<div id="app">
+<span v-once="name">Hello {{name}}</span>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            id:1,
+            index:0,
+            name:'Vue',
+            avatar:'http://......',
+            ocunt:[1,2,3,4,5],
+            names:['Vue1.0','Vue2.0'],
+            items:[
+                {name:'Vue1.0',version:'1.0'},
+                {name:'Vue1.1',version:'1.0'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

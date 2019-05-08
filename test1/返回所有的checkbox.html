@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var domList=document.getElementsByTagName('input');
+    var checkBoxList=[];
+    var len=domList.length;
+    while (len--){
+        if(domList[len].type=='checkbox'){
+            checkBoxList.push(domList[len]);
+        }
+    }
+    console.log(checkBoxList);
+</script>
+<p><input type="checkbox" name="category" value="今日话题" />今日话题 </p>
+<p><input type="checkbox" name="category" value="视觉焦点" />视觉焦点</p>
+<p><input type="checkbox" name="category" value="财经" />财经</p>
+<p><input type="checkbox" name="category" value="汽车" />汽车</p>
+<p><input type="checkbox" name="category" value="科技" />科技</p>
+<p><input type="checkbox" name="category" value="房产" />房产</p>
+<p><input type="checkbox" name="category" value="旅游" />旅游</p>
+<p><input id="btnOperate" type="button" value="选择" /></p>
+
+</body>
+</html>

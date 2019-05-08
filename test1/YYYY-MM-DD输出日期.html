@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var d=new Date();
+    var year=d.getFullYear();
+    var month=d.getMonth()+1;
+    month=month<10?'0'+month:month;
+    var day=d.getDate();
+    day=day<10?'0'+day:day;
+    alert(year+'-'+month+'-'+day);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id='div' onclick='alert("div");'>
+    <ul onclick='alert("ul");'>
+        <li id='need_hide' >test</li>
+    </ul>
+</div>
+<script>
+    function stopPropagation(e){
+        e=e||window.event;
+        if(e.stopPropagation){
+            e.stopPropagation();//W3C阻止冒泡方法
+        }else{
+            e.cancelable=true;//IE阻止冒泡方法
+        }
+    }
+    document.getElementById('need_hide').onclick=function (e) {
+        stopPropagation(e);
+    }
+</script>
+</body>
+</html>

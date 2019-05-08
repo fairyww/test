@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- html部分 -->
+<input id="input_n" type="text" placeholder="输入一个数字n">
+<button onclick="createTable()">确认</button>
+<br><br>
+
+<!-- css -->
+<style>
+    td{
+        width:10px;
+        height:10px;
+        border:1px solid;
+    }
+</style>
+
+<!-- js -->
+<script>
+    function createTable(){
+        var n=document.getElementById("input_n").value;
+        var str="<tbody>";
+        for(var i=0;i<n;i++){
+            str+="<tr>";
+            for(var j=0;j<n;j++){
+                str+="<td></td>";
+            }
+            str+="</tr>";
+        }
+        str += "</tbody>";
+        var table = document.createElement("table");
+        table.innerHTML = str;
+        table.setAttribute("cellspacing", 0);
+        document.body.appendChild(table);
+        colorEvent(table);
+    }
+    function colorEvent(table) {
+        table.addEventListener("mouseover", m_Point, false);
+        table.addEventListener("mouseout", m_Out, false);
+        table.addEventListener("click", m_Click, false);
+
+        function m_Point(event) {
+            var e = event || window.event;
+            var target = e.target || e.srcElement;
+            if (target.tagName == "TD" && target.style.background != "blue") {
+                target.style.background = "red";
+            }
+        }
+        function m_Out(event) {
+            var e = event || window.event;
+            var target = e.target || e.srcElement;
+            if (target.tagName == "TD" && target.style.background != "blue") {
+                target.style.background = "white";
+            }
+        }
+        function m_Click(event) {
+            var e = event || window.event;
+            var target = e.target || e.srcElement;
+            if (target.tagName == "TD") {
+                target.style.background = (target.style.background == "blue" ? "white" : "blue");
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var aArray=['a','b','c'];
+    // var bArray=['d','e','f'];
+    // var cArray=aArray.concat(bArray);
+    // cArray.splice(1,1);
+    // console.log(cArray);
+    //var _变量=NaN;
+    //var Obj = [];
+    //var Obj = {};
+    //var obj=();
+    //var a=undefined,b=NaN
+    //var a='123';b=NaN
+    // var a=NaN,b='undefined'
+    // console.log(a+b);
+    // var str='12345678';
+    // str=str.split('').reverse().join('');
+
+    // var str=12345678;
+    // str=str+'';
+    // str=str.split('').reverse();
+    // for(var i=1;i<str.length;i++){
+    //     if((i+1)%4==0){
+    //         str.splice(i,0,',');
+    //     }
+    // }
+    // str.reverse();
+    // var str1='';
+    // for(var i=0;i<str.length;i++){
+    //     str1+=str[i];
+    // }
+
+    // var num1=[];
+    // for(i=0; i<5;i++){
+    //     num1[i]=Math.floor(Math.random()*10)+1;
+    //     for(var j=0;j<i;j++){
+    //         if(num1[i]==num1[j]){
+    //             i--;
+    //         }
+    //     }
+    // }
+
+
+    // 数组去重（结果不对）
+    // Array.prototype.unique=function(){
+    //     var len=this.length, newArr=[], flag=1;
+    //     for(var i=0;i<len;i++){
+    //         for(var j=0;j<i; j++){
+    //             if(this[i]==this[j]){
+    //                 flag=0;
+    //             }
+    //         }
+    //         flag?newArr.push(this[i]):'';
+    //         flag = 1;
+    //     }
+    //     return newArr;
+    // }
+    // var newArr1=new Array(1,1,2,3,3,4);
+    // var n = newArr1.unique();
+    // console.log(n);
+
+
+    // (function(arr){
+    //     var len=arr.length;
+    //     newArr=[];
+    //     flag=1;
+    //     for(var i=0;i<len;i++){
+    //         for(var j=0;j<i;j++){
+    //             if(arr[i]==arr[j]){
+    //                 flag=0;
+    //             }
+    //         }
+    //         flag?newArr.push(arr[i]):'';
+    //     }
+    //     alert(newArr);
+    // })([1,1,22,3,4,55]);
+
+    function setN(obj) {
+        obj.name = "屌丝";
+        obj = new Object();
+        obj.name = "腐女"
+        console.log(obj)
+    }
+    var per = new Object();
+    setN(per);
+    
+
+
+
+</script>
+</body>
+</html>

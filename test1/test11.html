@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>价格</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="number" v-model="total">
+    <input type="text" v-model="price">
+
+    <p>应买物品的总价格：{{max}}</p >
+</div>
+</body>
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            total: 188,
+            price: ''
+        },
+        computed: {
+            max() {
+                let temp = 0;
+                let arr = this.price.split(' ').map(v => {
+                    return Number.parseInt(v)
+                })
+                console.log(arr)
+                if (arr.includes(NaN)) {
+                    return '***'
+                }
+                arr.sort((a,b)=> a-b)
+                console.log(arr)
+                for (let i of arr) {
+                    temp += i;
+                    if (temp > this.total) {
+                        temp -= i;
+                    }
+                }
+                return temp
+            }
+        }
+    })
+</script>
+</html>
